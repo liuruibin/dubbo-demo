@@ -13,7 +13,7 @@ public class TimeoutServiceImpl implements TimeoutService {
     @Override
     public String timeout() {
         try {
-            Thread.sleep(6_000);
+            Thread.sleep(5_000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

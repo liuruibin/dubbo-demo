@@ -4,8 +4,12 @@ import com.example.dubbo.demo.model.Amount;
 import com.example.dubbo.demo.model.BigDecimalRequest;
 import com.example.dubbo.demo.model.User;
 
-public interface DigDecimalService {
+import java.util.Map;
+
+public interface NumberFormatService {
     User getOne(BigDecimalRequest name);
 
     Amount getAmount();
+
+    Map<String, Object> getNumbers(Map<String, Object> params);
 }

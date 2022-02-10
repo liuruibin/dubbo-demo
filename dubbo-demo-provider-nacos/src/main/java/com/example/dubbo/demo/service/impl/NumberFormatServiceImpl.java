@@ -1,19 +1,22 @@
 package com.example.dubbo.demo.service.impl;
 
-import com.example.dubbo.demo.api.DigDecimalService;
+import com.example.dubbo.demo.api.NumberFormatService;
 import com.example.dubbo.demo.model.Amount;
 import com.example.dubbo.demo.model.BigDecimalRequest;
 import com.example.dubbo.demo.model.User;
 import org.apache.dubbo.config.annotation.DubboService;
 
 import java.math.BigDecimal;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 @DubboService(version = "1.0.2")
-public class BigDecimalServiceImpl implements DigDecimalService {
+public class NumberFormatServiceImpl implements NumberFormatService {
     static List<User> users = new ArrayList<>();
+    static DecimalFormat format = new DecimalFormat("0.00");
 
     static {
         for (int i = 0; i < 10; i++) {
@@ -37,7 +40,12 @@ public class BigDecimalServiceImpl implements DigDecimalService {
     public Amount getAmount() {
         Amount amount = new Amount();
         amount.setUser(users.get(0));
-        amount.setAmount(new BigDecimal("5.00"));
+        amount.setAmount(new BigDecimal("3.00"));
         return amount;
+    }
+
+    @Override
+    public Map<String, Object> getNumbers(Map<String, Object> params) {
+        return params;
     }
 }
