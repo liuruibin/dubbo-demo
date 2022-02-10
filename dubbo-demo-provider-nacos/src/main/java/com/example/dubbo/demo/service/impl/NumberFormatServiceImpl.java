@@ -3,6 +3,7 @@ package com.example.dubbo.demo.service.impl;
 import com.example.dubbo.demo.api.NumberFormatService;
 import com.example.dubbo.demo.model.Amount;
 import com.example.dubbo.demo.model.BigDecimalRequest;
+import com.example.dubbo.demo.model.NumberRequest;
 import com.example.dubbo.demo.model.User;
 import org.apache.dubbo.config.annotation.DubboService;
 
@@ -47,5 +48,10 @@ public class NumberFormatServiceImpl implements NumberFormatService {
     @Override
     public Map<String, Object> getNumbers(Map<String, Object> params) {
         return params;
+    }
+
+    @Override
+    public Object getNumbers(NumberRequest request) {
+        return request;
     }
 }
