@@ -9,7 +9,8 @@ import org.apache.dubbo.config.annotation.DubboService;
 public class ComplexDemoServiceImpl implements ComplexDemoService {
 
     @Override
-    public void complexDemo(ComplexRequest request) {
+    public ComplexRequest complexDemo(ComplexRequest request) {
         System.out.println(JSON.toJSONString(request));
+        return request;
     }
 }
